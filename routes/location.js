@@ -30,8 +30,8 @@ router.post('/', async (req, res) => {
         second: 'numeric'
         };
         const currentTime = new Date().toLocaleString('en-US', options);
-      console.log("\n\nIncoming 😈🤖😈... \n⌚: "+currentTime+"\ndevice_name:"+device_name+"\nlatitude: "+latitude.toString()
-      +" Longitude: "+longitude.toString()+"\nUrl: ",mapUrl)
+      console.log("\n\nIncoming 😈🤖😈... \n⌚: "+currentTime+"\n📱device_name:"+device_name+"\nlatitude: "+latitude.toString()
+      +" Longitude: "+longitude.toString()+"\n🗺️Url: ",mapUrl)
     } catch (err) {
       console.log(err.stack);
       res.status(500).send({ error: 'Something broke' });

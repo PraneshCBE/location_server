@@ -15,9 +15,9 @@ router.get("/",async (req, res)=>{
 
 router.post('/', async (req, res) => {
     try {
-      const { deviceName,latitude, longitude, mapUrl } = req.body;
+      const { device_name,latitude, longitude, mapUrl } = req.body;
     
-      await insertLocation(deviceName,latitude.toString(), longitude.toString(), mapUrl);
+      await insertLocation(device_name,latitude.toString(), longitude.toString(), mapUrl);
       
       res.send({ message: 'Location stored successfully!' });
     } catch (err) {

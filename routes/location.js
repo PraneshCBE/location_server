@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
       
       res.send({ message: 'Location stored successfully!' });
       
-      console.log("device_name:"+device_name+"\nlatitude: "+latitude.toString()
+      console.log("\n\nIncoming 😈😈....\ndevice_name:"+device_name+"\nlatitude: "+latitude.toString()
       +" Longitude: "+longitude.toString()+"\nUrl: ",mapUrl)
     } catch (err) {
       console.log(err.stack);

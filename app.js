@@ -14,7 +14,7 @@ app.use('/location',userRoute)
 
 
   //Starting Server
-  const port=4202
+  const port=4002
   app.listen(port, ()=>{
     console.log("Server is Running on Port",port)
   })

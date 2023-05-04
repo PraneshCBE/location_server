@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
         second: 'numeric'
         };
         const currentTime = new Date().toLocaleString('en-US', options);
-      console.log("\n\nIncoming 😈🤖😈... \n⌚: "+currentTime+"\n📱device_name:"+device_name+"\nlatitude: "+latitude.toString()
+      console.log("\n\nIncoming 😈🤖😈... \n⌚: "+currentTime+"\n📱device_name:"+device_name+"\n🏠latitude: "+latitude.toString()
       +" Longitude: "+longitude.toString()+"\n🗺️Url: ",mapUrl)
     } catch (err) {
       console.log(err.stack);

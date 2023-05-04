@@ -21,7 +21,16 @@ router.post('/', async (req, res) => {
       
       res.send({ message: 'Location stored successfully!' });
       
-      console.log("\n\nIncoming 😈😈....\ndevice_name:"+device_name+"\nlatitude: "+latitude.toString()
+        const timezone = 'Asia/Kolkata';
+        const options = {
+        timeZone: timezone,
+        hour12: false,
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+        };
+        const currentTime = new Date().toLocaleString('en-US', options);
+      console.log("\n\nIncoming 😈🤖😈... ⌚: "+currentTime+"\ndevice_name:"+device_name+"\nlatitude: "+latitude.toString()
       +" Longitude: "+longitude.toString()+"\nUrl: ",mapUrl)
     } catch (err) {
       console.log(err.stack);

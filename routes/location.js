@@ -1,10 +1,10 @@
 const express=require("express")
-const {getUsers} = require("../database.js")
+const {getUsers, getLocation} = require("../database.js")
 const router= express.Router()
 
 router.get("/",async (req, res)=>{
     try{
-    const users= await getUsers()
+    const users= await getLocation()
     res.send(users)
     }catch(err)
     {

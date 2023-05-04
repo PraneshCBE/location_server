@@ -15,4 +15,10 @@ async function getLocation(){
     const [rows]= await dbconnection.query("SELECT * FROM location")
     return rows
 } 
-module.exports ={getLocation}
+async function insertLocation(device_name, latitude, longitude, mapUrl) {
+    const query = "INSERT INTO location (device_name, latitude, longitude, mapUrl) VALUES (?, ?, ?, ?)";
+    const values = [device_name, latitude, longitude, mapUrl];
+    const result = await dbconnection.query(query, values);
+    return result;
+  }
+module.exports ={getLocation,insertLocation}

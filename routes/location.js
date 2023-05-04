@@ -1,5 +1,5 @@
 const express=require("express")
-const {getUsers, getLocation} = require("../database.js")
+const {getLocation, insertLocation} = require("../database.js")
 const router= express.Router()
 
 router.get("/",async (req, res)=>{
@@ -12,5 +12,18 @@ router.get("/",async (req, res)=>{
         res.status(500).send({error:"Something Broke"})
     }
 })
+
+router.post('/', async (req, res) => {
+    try {
+      const { deviceName,latitude, longitude, mapUrl } = req.body;
+    
+      await insertLocation(deviceName,latitude.toString(), longitude.toString(), mapUrl);
+      
+      res.send({ message: 'Location stored successfully!' });
+    } catch (err) {
+      console.log(err.stack);
+      res.status(500).send({ error: 'Something broke' });
+    }
+  });
 
 module.exports=router
